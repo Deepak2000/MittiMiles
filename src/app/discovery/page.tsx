@@ -166,6 +166,7 @@ export default function DiscoveryPage() {
                           key={tag.id}
                           type="button"
                           onClick={() => toggleInterest(tag.id)}
+                          aria-pressed={selected}
                           className={`flex items-center space-x-1.5 px-4 py-2 text-xs font-semibold rounded-full border transition-all ${
                             selected
                               ? "bg-primary text-white border-primary shadow-sm scale-102"
@@ -200,6 +201,8 @@ export default function DiscoveryPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
+              role="status"
+              aria-live="polite"
               className="bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md py-16 px-6 rounded-3xl border border-orange-100/40 dark:border-zinc-800/50 shadow-xl flex flex-col items-center justify-center space-y-6 text-center"
             >
               <div className="relative w-16 h-16">
@@ -221,6 +224,7 @@ export default function DiscoveryPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
+            role="alert"
             className="bg-white/80 dark:bg-zinc-900/60 backdrop-blur-md p-8 rounded-3xl border border-amber-200 dark:border-amber-900/40 shadow-xl space-y-6"
           >
             <div className="flex items-center space-x-3 text-amber-600 dark:text-amber-400">
@@ -331,7 +335,7 @@ export default function DiscoveryPage() {
             </div>
 
             {/* Navigation Tabs */}
-            <div className="flex border-b border-zinc-200 dark:border-zinc-800 overflow-x-auto scrollbar-none">
+            <div role="tablist" className="flex border-b border-zinc-200 dark:border-zinc-800 overflow-x-auto scrollbar-none">
               {[
                 { id: "lore", label: "Oral History & Lore", icon: BookOpen },
                 { id: "heritage", label: "Heritage Sights", icon: Castle },
@@ -347,6 +351,10 @@ export default function DiscoveryPage() {
                     onClick={() => {
                       setActiveTab(tab.id);
                     }}
+                    role="tab"
+                    aria-selected={active}
+                    aria-controls={`panel-${tab.id}`}
+                    id={`tab-${tab.id}`}
                     className={`flex items-center space-x-2 px-6 py-4 text-sm font-semibold whitespace-nowrap border-b-2 transition-colors focus:outline-none ${
                       active
                         ? "border-primary text-primary"
@@ -366,6 +374,9 @@ export default function DiscoveryPage() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
+                  role="tabpanel"
+                  id="panel-lore"
+                  aria-labelledby="tab-lore"
                   className="bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md p-8 rounded-3xl border border-orange-100/40 dark:border-zinc-800/50 shadow-sm space-y-4"
                 >
                   <h3 className="text-xl font-bold tracking-tight text-primary">
@@ -381,6 +392,9 @@ export default function DiscoveryPage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
+                  role="tabpanel"
+                  id="panel-heritage"
+                  aria-labelledby="tab-heritage"
                   className="grid grid-cols-1 gap-6"
                 >
                   {result.heritageSights && result.heritageSights.length > 0 ? (
@@ -412,6 +426,9 @@ export default function DiscoveryPage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
+                  role="tabpanel"
+                  id="panel-crafts"
+                  aria-labelledby="tab-crafts"
                   className="grid grid-cols-1 md:grid-cols-2 gap-6"
                 >
                   {result.crafts.map((craft, idx) => (
@@ -442,6 +459,9 @@ export default function DiscoveryPage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
+                  role="tabpanel"
+                  id="panel-food"
+                  aria-labelledby="tab-food"
                   className="grid grid-cols-1 md:grid-cols-2 gap-6"
                 >
                   {result.food.map((dish, idx) => (
@@ -466,6 +486,9 @@ export default function DiscoveryPage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
+                  role="tabpanel"
+                  id="panel-itinerary"
+                  aria-labelledby="tab-itinerary"
                   className="space-y-6"
                 >
                   {result.itinerary.map((step, idx) => (

@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Compass, Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
+import Image from "next/image";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,10 +30,14 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center space-x-2 group">
-          <div className="p-2 bg-gradient-to-tr from-primary to-secondary rounded-xl text-white shadow-md shadow-primary/20 group-hover:scale-105 transition-transform duration-200">
-            <Compass className="w-5 h-5 animate-pulse" />
-          </div>
+        <a href="/" className="flex items-center space-x-2.5 group">
+          <Image
+            src="/mitti-miles-logo.png"
+            alt="MittiMiles Logo"
+            width={38}
+            height={38}
+            className="rounded-xl object-contain shadow-md shadow-primary/10 group-hover:scale-105 transition-transform duration-200"
+          />
           <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             MittiMiles
           </span>
@@ -62,7 +67,7 @@ export default function Header() {
 
         {/* Action Button */}
         <div className="hidden md:flex items-center space-x-4">
-          <button className="flex items-center space-x-1.5 px-4 py-2 text-xs font-semibold text-zinc-700 dark:text-zinc-300 hover:text-primary dark:hover:text-secondary transition-colors">
+          <button aria-label="Select Language (Current: English)" className="flex items-center space-x-1.5 px-4 py-2 text-xs font-semibold text-zinc-700 dark:text-zinc-300 hover:text-primary dark:hover:text-secondary transition-colors">
             <Globe className="w-3.5 h-3.5" />
             <span>EN</span>
           </button>
@@ -74,6 +79,8 @@ export default function Header() {
         {/* Mobile menu trigger */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+          aria-expanded={isMobileMenuOpen}
           className="md:hidden p-2 text-zinc-600 dark:text-zinc-400 hover:text-primary focus:outline-none"
         >
           {isMobileMenuOpen ? (
@@ -110,7 +117,7 @@ export default function Header() {
           </a>
           <hr className="border-orange-100 dark:border-zinc-800" />
           <div className="flex flex-col space-y-3 pt-2">
-            <button className="w-full py-3 text-center text-sm font-semibold text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-900 rounded-full">
+            <button aria-label="Select Language (Current: English)" className="w-full py-3 text-center text-sm font-semibold text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-900 rounded-full">
               Language (EN)
             </button>
             <a href="/discovery" className="w-full py-3 text-center text-sm font-semibold text-white bg-primary hover:bg-primary-hover rounded-full shadow-lg">
