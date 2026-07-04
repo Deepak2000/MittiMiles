@@ -148,7 +148,7 @@ export default function DiscoveryPage() {
                     value={destination}
                     onChange={(e) => setDestination(e.target.value)}
                     required
-                    className="w-full px-5 py-4 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-base transition-colors"
+                    className="w-full px-5 py-4 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:border-transparent text-base transition-colors"
                   />
                 </div>
 
@@ -167,7 +167,7 @@ export default function DiscoveryPage() {
                           type="button"
                           onClick={() => toggleInterest(tag.id)}
                           aria-pressed={selected}
-                          className={`flex items-center space-x-1.5 px-4 py-2 text-xs font-semibold rounded-full border transition-all ${
+                          className={`flex items-center space-x-1.5 px-4 py-2 text-xs font-semibold rounded-full border transition-all focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:outline-none ${
                             selected
                               ? "bg-primary text-white border-primary shadow-sm scale-102"
                               : "bg-white dark:bg-zinc-950 text-zinc-600 dark:text-zinc-400 border-zinc-200 dark:border-zinc-800 hover:border-primary/40"
@@ -186,7 +186,7 @@ export default function DiscoveryPage() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center space-x-2 py-4 font-semibold text-white bg-gradient-to-r from-primary to-secondary hover:opacity-95 rounded-2xl shadow-lg shadow-primary/20 active:scale-99 transition-all duration-200"
+                    className="w-full flex items-center justify-center space-x-2 py-4 font-semibold text-white bg-gradient-to-r from-primary to-secondary hover:opacity-95 rounded-2xl shadow-lg shadow-primary/20 active:scale-99 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none"
                   >
                     <span>Make my journey awesome</span>
                     <ArrowRight className="w-5 h-5" />
@@ -246,7 +246,7 @@ export default function DiscoveryPage() {
                     <button
                       key={idx}
                       onClick={() => handleUseSuggestion(suggestion)}
-                      className="flex items-center justify-between p-4 bg-brand-bg dark:bg-zinc-950 border border-orange-100 hover:border-primary/40 dark:border-zinc-800 rounded-2xl text-left group transition-all"
+                      className="flex items-center justify-between p-4 bg-brand-bg dark:bg-zinc-950 border border-orange-100 hover:border-primary/40 dark:border-zinc-800 rounded-2xl text-left group transition-all focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none"
                     >
                       <span className="font-semibold text-sm group-hover:text-primary dark:group-hover:text-secondary transition-colors">
                         {suggestion}
@@ -261,13 +261,13 @@ export default function DiscoveryPage() {
             <div className="flex flex-col sm:flex-row gap-3 pt-6 border-t border-zinc-100 dark:border-zinc-800">
               <button
                 onClick={() => setShowValidationConfirm(false)}
-                className="flex-1 py-3 px-6 text-sm font-semibold text-zinc-700 dark:text-zinc-300 hover:text-primary bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-xl transition"
+                className="flex-1 py-3 px-6 text-sm font-semibold text-zinc-700 dark:text-zinc-300 hover:text-primary bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-xl transition focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none"
               >
                 Search for exactly "{destination}" anyway
               </button>
               <button
                 onClick={() => setResult(null)}
-                className="py-3 px-6 text-sm font-semibold text-zinc-400 hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300 rounded-xl transition"
+                className="py-3 px-6 text-sm font-semibold text-zinc-400 hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300 rounded-xl transition focus-visible:ring-2 focus-visible:ring-zinc-400/50 focus-visible:outline-none"
               >
                 Cancel and search again
               </button>
@@ -286,7 +286,7 @@ export default function DiscoveryPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
               <button
                 onClick={() => setResult(null)}
-                className="flex items-center space-x-1 text-sm font-semibold text-zinc-500 hover:text-primary transition-colors focus:outline-none"
+                className="flex items-center space-x-1 text-sm font-semibold text-zinc-500 hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:outline-none rounded-lg px-2 py-1"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>Search another town</span>
@@ -326,7 +326,7 @@ export default function DiscoveryPage() {
                   href={`https://www.google.com/maps/search/?api=1&query=${result.coordinates.lat},${result.coordinates.lng}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-1.5 px-4 py-2.5 text-xs font-bold text-white bg-accent hover:opacity-95 rounded-xl shadow-md transition-all duration-200"
+                  className="inline-flex items-center space-x-1.5 px-4 py-2.5 text-xs font-bold text-white bg-accent hover:opacity-95 rounded-xl shadow-md transition-all duration-200 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:outline-none"
                 >
                   <Map className="w-3.5 h-3.5" />
                   <span>Open in Google Maps</span>
@@ -355,7 +355,7 @@ export default function DiscoveryPage() {
                     aria-selected={active}
                     aria-controls={`panel-${tab.id}`}
                     id={`tab-${tab.id}`}
-                    className={`flex items-center space-x-2 px-6 py-4 text-sm font-semibold whitespace-nowrap border-b-2 transition-colors focus:outline-none ${
+                    className={`flex items-center space-x-2 px-6 py-4 text-sm font-semibold whitespace-nowrap border-b-2 transition-colors focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:outline-none ${
                       active
                         ? "border-primary text-primary"
                         : "border-transparent text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200"

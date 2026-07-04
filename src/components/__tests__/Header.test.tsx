@@ -4,7 +4,7 @@ import Header from "../Header";
 
 // Mock next/image since it uses next server internals which aren't fully configured in JSDOM jest environment
 jest.mock("next/image", () => {
-  return function MockImage({ src, alt, ...props }: any) {
+  return function MockImage({ src, alt, priority, ...props }: any) {
     // eslint-disable-next-line @next/next/no-img-element
     return <img src={src} alt={alt} {...props} />;
   };

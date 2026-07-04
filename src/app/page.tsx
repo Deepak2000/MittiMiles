@@ -104,14 +104,14 @@ export default function Home() {
           >
             <a 
               href="/discovery"
-              className="group flex items-center justify-center space-x-2 px-8 py-4 font-semibold text-white bg-gradient-to-r from-primary to-secondary hover:opacity-95 rounded-2xl shadow-lg shadow-primary/20 active:scale-98 transition-all duration-200"
+              className="group flex items-center justify-center space-x-2 px-8 py-4 font-semibold text-white bg-gradient-to-r from-primary to-secondary hover:opacity-95 rounded-2xl shadow-lg shadow-primary/20 active:scale-98 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               <span>Begin Your Voyage</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a 
+             <a 
               href="#problem"
-              className="flex items-center justify-center space-x-2 px-8 py-4 font-semibold text-zinc-700 dark:text-zinc-300 bg-white/70 dark:bg-zinc-950/70 border border-zinc-200 dark:border-zinc-800 rounded-2xl hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
+              className="flex items-center justify-center space-x-2 px-8 py-4 font-semibold text-zinc-700 dark:text-zinc-300 bg-white/70 dark:bg-zinc-950/70 border border-zinc-200 dark:border-zinc-800 rounded-2xl hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors focus-visible:ring-2 focus-visible:ring-zinc-400 dark:focus-visible:ring-zinc-600 focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               <span>Read the Problem</span>
             </a>
@@ -406,7 +406,7 @@ export default function Home() {
             <p className="max-w-lg text-orange-50 font-medium text-sm sm:text-base leading-relaxed">
               Launch our discovery model, input your specific travel interests, and experience the cultural voyage of a lifetime.
             </p>
-            <a href="/discovery" className="inline-block px-8 py-4 bg-white text-primary hover:bg-orange-50 font-bold rounded-2xl shadow-lg active:scale-98 transition-all duration-200">
+             <a href="/discovery" className="inline-block px-8 py-4 bg-white text-primary hover:bg-orange-50 font-bold rounded-2xl shadow-lg active:scale-98 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:outline-none">
               Launch MittiMiles Discovery
             </a>
           </div>

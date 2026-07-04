@@ -36,6 +36,7 @@ export default function Header() {
             alt="MittiMiles Logo"
             width={38}
             height={38}
+            priority
             className="rounded-xl object-contain shadow-md shadow-primary/10 group-hover:scale-105 transition-transform duration-200"
           />
           <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -71,7 +72,7 @@ export default function Header() {
             <Globe className="w-3.5 h-3.5" />
             <span>EN</span>
           </button>
-          <a href="/discovery" className="px-5 py-2.5 text-sm font-semibold text-white bg-primary hover:bg-primary-hover rounded-full shadow-md shadow-primary/10 hover:shadow-primary/20 active:scale-95 transition-all duration-200">
+          <a href="/discovery" className="px-5 py-2.5 text-sm font-semibold text-white bg-primary hover:bg-primary-hover rounded-full shadow-md shadow-primary/10 hover:shadow-primary/20 active:scale-95 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none">
             Launch Discovery
           </a>
         </div>
@@ -81,7 +82,7 @@ export default function Header() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
           aria-expanded={isMobileMenuOpen}
-          className="md:hidden p-2 text-zinc-600 dark:text-zinc-400 hover:text-primary focus:outline-none"
+          className="md:hidden p-2 text-zinc-600 dark:text-zinc-400 hover:text-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-lg"
         >
           {isMobileMenuOpen ? (
             <X className="w-6 h-6" />
@@ -120,7 +121,7 @@ export default function Header() {
             <button aria-label="Select Language (Current: English)" className="w-full py-3 text-center text-sm font-semibold text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-900 rounded-full">
               Language (EN)
             </button>
-            <a href="/discovery" className="w-full py-3 text-center text-sm font-semibold text-white bg-primary hover:bg-primary-hover rounded-full shadow-lg">
+            <a href="/discovery" className="w-full py-3 text-center text-sm font-semibold text-white bg-primary hover:bg-primary-hover rounded-full shadow-lg focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none">
               Launch Discovery
             </a>
           </div>
